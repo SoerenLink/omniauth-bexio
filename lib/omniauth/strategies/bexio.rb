@@ -11,6 +11,14 @@ module OmniAuth
         token_url: '/oauth/access_token'
       }
 
+      def request_phase
+        super
+      end
+
+      def callback_phase
+        super
+      end
+
       uid { access_token.params['user_id'] }
 
       info do
@@ -25,10 +33,6 @@ module OmniAuth
         {
           company_profile: company_profile
         }
-      end
-
-      def request_phase
-        redirect client.auth_code.authorize_url({:redirect_uri => callback_url}.merge(options.authorize_params))
       end
 
       def raw_info

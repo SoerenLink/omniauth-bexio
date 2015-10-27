@@ -11,14 +11,6 @@ module OmniAuth
         token_url: '/oauth/access_token'
       }
 
-      def request_phase
-        super
-      end
-
-      def callback_phase
-        super
-      end
-
       uid { access_token.params['user_id'] }
 
       info do

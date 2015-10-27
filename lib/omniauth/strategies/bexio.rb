@@ -1,4 +1,3 @@
-require 'multi_json'
 require 'omniauth-oauth2'
 
 module OmniAuth
@@ -26,6 +25,10 @@ module OmniAuth
         {
           company_profile: company_profile
         }
+      end
+
+      def request_phase
+        super
       end
 
       def raw_info

@@ -17,7 +17,8 @@ module OmniAuth
         {
           email: raw_info['email'],
           first_name: raw_info['firstname'],
-          last_name: raw_info['lastname']
+          last_name: raw_info['lastname'],
+          org: access_token.params['org']
         }
       end
 
